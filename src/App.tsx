@@ -4,7 +4,7 @@ import Accordion from "./components/Accordion/Accordion";
 import {Rating} from "./components/Rating/Rating";
 import Students from "./components/Students/Students";
 import Cars from "./components/Cars/Cars";
-import Button from "./components/Button";
+import Button from "./components/Button/Button";
 
 
 let topCarsArray = [
@@ -15,24 +15,34 @@ let topCarsArray = [
 
 function App() {
     console.log("App is rendering")
+    //
+    // const button1Foo = () => {
+    //     console.log("1foo")
+    // };
+    //
+    // const button2Foo = () => {
+    //     console.log("foo2")
+    // };
+    let [a, setA] = React.useState(1)
 
-    const button1Foo = () => {
-        console.log("1foo")
+    const onClickHandlerPlus = () => {
+        setA(++a)
     };
-    
-    const button2Foo = () => {
-        console.log("foo2")
-    };
-    const button3Foo = () => { 
-     return ;
+
+    const onClickHandlerMinus = () => {
+     setA(0)
     };
 
     return (
         <div>
 
-          <Button name={"Btn1"} callBack={button1Foo}/>
-          <Button name={"Btn2"} callBack={button2Foo}/>
-          <Button name={"StupidBtn"} callBack={button2Foo}/>
+            <h1>{a}</h1>
+            <button onClick={onClickHandlerPlus}>+1</button>
+            <button onClick={onClickHandlerMinus}>0</button>
+
+
+          {/*<Button name={"Btn1"} callBack={button1Foo}/>*/}
+          {/*<Button name={"Btn2"} callBack={button2Foo}/>*/}
 
             {/*<PageTitle title={"This is App component"}/>*/}
             {/*Article 1*/}
