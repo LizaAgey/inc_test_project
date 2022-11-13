@@ -4,6 +4,7 @@ import Accordion from "./components/Accordion/Accordion";
 import {Rating} from "./components/Rating/Rating";
 import Students from "./components/Students/Students";
 import Cars from "./components/Cars/Cars";
+import Button from "./components/Button";
 
 
 let topCarsArray = [
@@ -15,18 +16,23 @@ let topCarsArray = [
 function App() {
     console.log("App is rendering")
 
-    // const myFirstSubscriber = (event: MouseEvent<HTMLButtonElement>) => {
-    //     alert("user1")
-    // }
-    // const mySecondSubscriber = (event: MouseEvent<HTMLButtonElement>) => {
-    //     alert("user2")
-    // }
+    const button1Foo = () => {
+        console.log("1foo")
+    };
+    
+    const button2Foo = () => {
+        console.log("foo2")
+    };
+    const button3Foo = () => { 
+     return ;
+    };
 
     return (
         <div>
-            {/*<button onClick={myFirstSubscriber}>MyButton-1            </button>*/}
-            {/*<button onClick={mySecondSubscriber}>MyButton-2            </button>*/}
 
+          <Button name={"Btn1"} callBack={button1Foo}/>
+          <Button name={"Btn2"} callBack={button2Foo}/>
+          <Button name={"StupidBtn"} callBack={button2Foo}/>
 
             {/*<PageTitle title={"This is App component"}/>*/}
             {/*Article 1*/}
@@ -50,29 +56,30 @@ function App() {
             {/*    {id:"d", name:"a",age:30},*/}
             {/*]}/>*/}
 
-            <Cars carsInfo = {topCarsArray}/>
+            {/*<Cars carsInfo = {topCarsArray}/>*/}
+
 
         </div>
     );
 }
 
-type PageTitlePropsType = {
-    title: string
-}
-
-function PageTitle(props: PageTitlePropsType) {
-    return (
-        <h1>
-            {props.title}
-        </h1>
-    )
-}
-
-
-function hello() {
-    debugger
-    alert("hello")
-}
+// type PageTitlePropsType = {
+//     title: string
+// }
+//
+// function PageTitle(props: PageTitlePropsType) {
+//     return (
+//         <h1>
+//             {props.title}
+//         </h1>
+//     )
+// }
+//
+//
+// function hello() {
+//     debugger
+//     alert("hello")
+// }
 
 // hello()
 
