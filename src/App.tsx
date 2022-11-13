@@ -7,9 +7,9 @@ import Cars from "./components/Cars/Cars";
 
 
 let topCarsArray = [
-    {company: "a", model: "1"},
-    {company: "b", model: "2"},
-    {company: "c", model: "3"}
+    {company: "a", model: "10"},
+    {company: "b", model: "20"},
+    {company: "c", model: "30"}
 ]
 
 function App() {
@@ -24,8 +24,8 @@ function App() {
 
     return (
         <div>
-            <button onClick={myFirstSubscriber}>MyButton-1            </button>
-            <button onClick={mySecondSubscriber}>MyButton-2            </button>
+            {/*<button onClick={myFirstSubscriber}>MyButton-1            </button>*/}
+            {/*<button onClick={mySecondSubscriber}>MyButton-2            </button>*/}
 
 
             {/*<PageTitle title={"This is App component"}/>*/}
@@ -50,7 +50,7 @@ function App() {
             {/*    {id:"d", name:"a",age:30},*/}
             {/*]}/>*/}
 
-            {/*<Cars carsInfo = {topCarsArray}/>*/}
+            <Cars carsInfo = {topCarsArray}/>
 
         </div>
     );
