@@ -1,8 +1,9 @@
 import React, {MouseEvent} from 'react';
 import './App.css';
-import UseState from "./components/UseState";
-// import Accordion from "./components/Accordion/Accordion";
-// import {Rating} from "./components/Rating/Rating";
+import Switcher from "./components/OnOff/Switcher";
+// import UseState from "./components/UseState";
+import Accordion from "./components/Accordion/Accordion";
+import {Rating} from "./components/Rating/Rating";
 // import Students from "./components/Students/Students";
 // import Cars from "./components/Cars/Cars";
 // import Button from "./components/Button/Button";
@@ -43,24 +44,24 @@ function App() {
     // };
 
 
-    const [money, setMoney] = React.useState([
-        {banknotes: 'Dollars', value: 100, number: ' a1234567890'},
-        {banknotes: 'Dollars', value: 50, number: ' z1234567890'},
-        {banknotes: 'RUBLS', value: 100, number: ' w1234567890'},
-        {banknotes: 'Dollars', value: 100, number: ' e1234567890'},
-        {banknotes: 'Dollars', value: 50, number: ' c1234567890'},
-        {banknotes: 'RUBLS', value: 100, number: ' r1234567890'},
-        {banknotes: 'Dollars', value: 50, number: ' x1234567890'},
-        {banknotes: 'RUBLS', value: 50, number: ' v1234567890'},
-    ])
-    let currentMoney = money
-
-    const [filterValue, setFilterValue] = React.useState<FilterValueType>("all")
-
-
-    const onClickFilterHandler = (currency: FilterValueType) => {
-        setFilterValue(currency)
-    };
+    // const [money, setMoney] = React.useState([
+    //     {banknotes: 'Dollars', value: 100, number: ' a1234567890'},
+    //     {banknotes: 'Dollars', value: 50, number: ' z1234567890'},
+    //     {banknotes: 'RUBLS', value: 100, number: ' w1234567890'},
+    //     {banknotes: 'Dollars', value: 100, number: ' e1234567890'},
+    //     {banknotes: 'Dollars', value: 50, number: ' c1234567890'},
+    //     {banknotes: 'RUBLS', value: 100, number: ' r1234567890'},
+    //     {banknotes: 'Dollars', value: 50, number: ' x1234567890'},
+    //     {banknotes: 'RUBLS', value: 50, number: ' v1234567890'},
+    // ])
+    // let currentMoney = money
+    //
+    // const [filterValue, setFilterValue] = React.useState<FilterValueType>("all")
+    //
+    //
+    // const onClickFilterHandler = (currency: FilterValueType) => {
+    //     setFilterValue(currency)
+    // };
 
     // if (filterValue === 'Dollars') {
     //     currentMoney = currentMoney.filter((initialElement, index) => initialElement.banknotes === "Dollars")
@@ -71,17 +72,21 @@ function App() {
     //
     // }
 
-    if (filterValue !== "all") {
-        currentMoney = currentMoney.filter((initialElement) => initialElement.banknotes === filterValue)
-    }
+    // if (filterValue !== "all") {
+    //     currentMoney = currentMoney.filter((initialElement) => initialElement.banknotes === filterValue)
+    // }
 
     return (
         <div>
 
-            <UseState
-            currentMoney={currentMoney}
-            onClickFilterHandler={onClickFilterHandler}
-            />
+            <Switcher/>
+            <Switcher/>
+            {/*<Switcher isTurned={false}/>*/}
+
+            {/*<UseState*/}
+            {/*currentMoney={currentMoney}*/}
+            {/*onClickFilterHandler={onClickFilterHandler}*/}
+            {/*/>*/}
 
             {/*<h1>{a}</h1>*/}
             {/*<button onClick={onClickHandlerPlus}>+1</button>*/}
@@ -91,19 +96,21 @@ function App() {
             {/*<Button name={"Btn1"} callBack={button1Foo}/>*/}
             {/*<Button name={"Btn2"} callBack={button2Foo}/>*/}
 
-            {/*<PageTitle title={"This is App component"}/>*/}
+
             {/*Article 1*/}
-            {/*<Rating value={2}/>*/}
-            {/*<Accordion*/}
-            {/*    titleValue={"Menu"}*/}
-            {/*    collapsed={true}*/}
-            {/*/>*/}
+            <Accordion
+                titleValue={"Menu"}
+            />
+            <Accordion
+                titleValue={"Users"}
+            />
             {/*Article 2*/}
-            {/*<Rating value={3}/>*/}
-            {/*<Accordion*/}
-            {/*    titleValue={"Users"}*/}
-            {/*    collapsed={false}*/}
-            {/*/>*/}
+            {/*<Rating value={0}/>*/}
+            {/*<Rating value={1}/>*/}
+            {/*<Rating value={2}/>*/}
+            <Rating/>
+            {/*<Rating value={4}/>*/}
+            {/*<Rating value={5}/>*/}
 
             {/*<Students*/}
             {/*infoStudents ={[*/}
