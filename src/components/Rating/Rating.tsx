@@ -5,30 +5,34 @@ type RatingPropsType = {
 }
 
 export function Rating(props: RatingPropsType) {
-    console.log("Rating is rendering")
+    console.log('Rating is rendering')
 
     const [value, setValue] = useState(0)
 
-    const onClickHandler = (value:number) => {
-     setValue(value)
+    const onClickHandler = (value: number) => {
+        setValue(value)
     };
 
     return <div>
-        <Star selected={value > 0}/> <button onClick={()=>onClickHandler(1)}>1</button>
-        <Star selected={value > 1}/> <button onClick={()=>onClickHandler(2)}>2</button>
-        <Star selected={value > 2}/> <button onClick={()=>onClickHandler(3)}>3</button>
-        <Star selected={value > 3}/> <button onClick={()=>onClickHandler(4)}>4</button>
-        <Star selected={value > 4}/> <button onClick={()=>onClickHandler(5)}>5</button>
+        <Star selected={value > 0} callback={onClickHandler} value={1}/>
+        <Star selected={value > 1} callback={onClickHandler} value={2}/>
+        <Star selected={value > 2} callback={onClickHandler} value={3}/>
+        <Star selected={value > 3} callback={onClickHandler} value={4}/>
+        <Star selected={value > 4} callback={onClickHandler} value={5}/>
     </div>
 
 }
 
 type StartPropsType = {
-    selected: boolean
+    selected: boolean,
+    callback: (value: number) => void,
+    value: number
 }
 
 
 function Star(props: StartPropsType) {
-    console.log("Star is rendering")
-    return props.selected ? (<span><b>Star </b></span>) : (<span>Star </span>)
+    console.log('Star is rendering')
+    return props.selected
+        ? (<span onClick={() => props.callback(props.value)}><b>Star </b></span>)
+        : (<span onClick={() => props.callback(props.value)}>Star </span>)
 }
