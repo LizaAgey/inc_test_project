@@ -4,7 +4,7 @@ type AccordionPropsType = {
     titleValue: string
 }
 
-function Accordion(props: AccordionPropsType) {
+function UncontrolledAccordion(props: AccordionPropsType) {
 
     const [isCollapsed, setIsCollapsed] = useState(true)
 
@@ -12,9 +12,11 @@ function Accordion(props: AccordionPropsType) {
         setIsCollapsed(!isCollapsed)
     };
 
-    console.log("Accordion is rendering")
+    console.log("UncontrolledAccordion is rendering")
     return <div>
-        <AccordionTitle title={props.titleValue} callback={onClickHandler}/>
+        <AccordionTitle title={props.titleValue}
+                        onClick={()=>setIsCollapsed(!isCollapsed)}
+                        />
 
         {/*instead of if..else-statement*/}
         {!isCollapsed && <AccordionBody/>}
@@ -23,13 +25,13 @@ function Accordion(props: AccordionPropsType) {
 
 type AccordionTitlePropsType = {
     title: string,
-    callback: ()=>void
+    onClick: ()=>void
 }
 
 function AccordionTitle(props: AccordionTitlePropsType) {
     console.log("AccordionTitle is rendering")
     return (
-        <h3 onClick={props.callback}>{props.title}</h3>
+        <h3 onClick={()=>props.onClick()}>{props.title}</h3>
     )
 }
 
@@ -44,4 +46,4 @@ function AccordionBody() {
     )
 }
 
-export default Accordion
+export default UncontrolledAccordion

@@ -2,8 +2,8 @@ import React, {MouseEvent} from 'react';
 import './App.css';
 import Switcher from "./components/OnOff/Switcher";
 // import UseState from "./components/UseState";
-import Accordion from "./components/Accordion/Accordion";
-import {Rating} from "./components/Rating/Rating";
+import UncontrolledAccordion from "./components/UncontrolledAccordion/UncontrolledAccordion";
+import {UncontrolledRating} from "./components/UncontrolledRating/UncontrolledRating";
 // import Students from "./components/Students/Students";
 // import Cars from "./components/Cars/Cars";
 // import Button from "./components/Button/Button";
@@ -98,19 +98,19 @@ function App() {
 
 
             {/*Article 1*/}
-            <Accordion
+            <UncontrolledAccordion
                 titleValue={"Menu"}
             />
-            <Accordion
+            <UncontrolledAccordion
                 titleValue={"Users"}
             />
             {/*Article 2*/}
-            {/*<Rating value={0}/>*/}
-            {/*<Rating value={1}/>*/}
-            {/*<Rating value={2}/>*/}
-            <Rating/>
-            {/*<Rating value={4}/>*/}
-            {/*<Rating value={5}/>*/}
+            {/*<UncontrolledRating value={0}/>*/}
+            {/*<UncontrolledRating value={1}/>*/}
+            {/*<UncontrolledRating value={2}/>*/}
+            <UncontrolledRating/>
+            {/*<UncontrolledRating value={4}/>*/}
+            {/*<UncontrolledRating value={5}/>*/}
 
             {/*<Students*/}
             {/*infoStudents ={[*/}
