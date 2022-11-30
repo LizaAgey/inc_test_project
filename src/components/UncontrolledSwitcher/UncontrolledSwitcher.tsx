@@ -1,11 +1,11 @@
 import React, {useState} from 'react';
-import './Switcher.css'
+import './UncontrolledSwitcher.css'
 
-type SwitcherType = {
+type UncontrolledSwitcherType = {
     // isTurned: boolean
 }
 
-const Switcher: React.FC<SwitcherType> = (props) => {
+export const UncontrolledSwitcher: React.FC<UncontrolledSwitcherType> = (props) => {
 
     const [isTurned, setIsTurned] = useState(false)
 
@@ -86,5 +86,3 @@ const Switcher: React.FC<SwitcherType> = (props) => {
     //     </div>
     // );
 };
-
-export default Switcher;

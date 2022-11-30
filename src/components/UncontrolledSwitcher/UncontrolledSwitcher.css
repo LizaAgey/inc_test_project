@@ -1,0 +1,20 @@
+.onOff {
+    display: flex;
+    margin: 10px;
+}
+.lamp {
+    margin-left: 5px;
+    border-radius: 100%;
+    width: 20px;
+    height: 20px;
+    background-color: grey;
+}
+
+.green{
+    background-color: rgba(0, 128, 0, 0.21);
+}
+
+.red {
+    background-color: red;
+}
+

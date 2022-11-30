@@ -1,4 +1,4 @@
-import React, {MouseEvent} from 'react';
+import React from 'react';
 
 type ButtonType = {
     name: string,
@@ -13,7 +13,6 @@ const Button: React.FC<ButtonType> = (props) => {
     // const mySecondSubscriber = (event: MouseEvent<HTMLButtonElement>) => {
     //     alert("user2")
     // }
-
 
     // const onClickHandler = (_: MouseEvent) => {
     //     let userName: string | null = prompt()
@@ -34,20 +33,16 @@ const Button: React.FC<ButtonType> = (props) => {
         props.callBack()
     };
 
-
     return (
         <button onClick={onClickHandler}>
             {props.name}
         </button>
     )
 
-
     {/*<button onClick={foo1}>1</button>*/
     }
     {/*<button onClick={()=>foo2(100300)}>2</button>*/
     }
-
-
 }
 
 export default Button;

@@ -5,8 +5,7 @@ type RatingPropsType = {
 }
 type StartPropsType = {
     selected: boolean,
-    setValue: (value: number) => void,
-    value: number
+    setValue: () => void,
 }
 
 export function UncontrolledRating(props: RatingPropsType) {
@@ -15,11 +14,11 @@ export function UncontrolledRating(props: RatingPropsType) {
     const [value, setValue] = useState(0)
 
     return <div>
-        <Star selected={value > 0} setValue={setValue} value={1}/>
-        <Star selected={value > 1} setValue={setValue} value={2}/>
-        <Star selected={value > 2} setValue={setValue} value={3}/>
-        <Star selected={value > 3} setValue={setValue} value={4}/>
-        <Star selected={value > 4} setValue={setValue} value={5}/>
+        <Star selected={value > 0} setValue={()=>setValue(1)}/>
+        <Star selected={value > 1} setValue={()=>setValue(2)}/>
+        <Star selected={value > 2} setValue={()=>setValue(3)}/>
+        <Star selected={value > 3} setValue={()=>setValue(4)}/>
+        <Star selected={value > 4} setValue={()=>setValue(5)}/>
     </div>
 
 }
@@ -28,7 +27,7 @@ export function UncontrolledRating(props: RatingPropsType) {
 function Star(props: StartPropsType) {
     console.log('Star is rendering')
     return (
-        <span onClick={() => props.setValue(props.value)}>
+        <span onClick={() => props.setValue()}>
             {props.selected ? (<b>Star </b>) : 'Star'}
         </span>
     )

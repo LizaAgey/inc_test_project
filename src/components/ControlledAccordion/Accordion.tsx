@@ -1,23 +1,24 @@
 import React, {useState} from 'react';
 
-type UncontrolledAccordionPropsType = {
+type AccordionPropsType = {
     titleValue: string
+    accordionCollapsed: boolean
+    onClick: (accordionCollapsed: boolean)=>void
 }
+
 type AccordionTitlePropsType = {
     title: string,
     onClick: ()=>void
 }
 
-function UncontrolledAccordion(props: UncontrolledAccordionPropsType) {
-    console.log("UncontrolledAccordion is rendering")
-    const [isCollapsed, setIsCollapsed] = useState(true)
+function Accordion(props: AccordionPropsType) {
 
+    console.log("Accordion is rendering")
     return <div>
         <AccordionTitle title={props.titleValue}
-                        onClick={()=>setIsCollapsed(!isCollapsed)}
+                        onClick={()=>props.onClick(!props.accordionCollapsed)}
                         />
-
-        {!isCollapsed && <AccordionBody/>}
+        {!props.accordionCollapsed && <AccordionBody/>}
     </div>
 }
 
@@ -39,4 +40,4 @@ function AccordionBody() {
     )
 }
 
-export default UncontrolledAccordion
+export default Accordion

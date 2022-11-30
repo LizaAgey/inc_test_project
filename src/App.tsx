@@ -1,29 +1,41 @@
-import React, {MouseEvent} from 'react';
+import React, {useState} from 'react';
 import './App.css';
-import Switcher from "./components/OnOff/Switcher";
-// import UseState from "./components/UseState";
-import UncontrolledAccordion from "./components/UncontrolledAccordion/UncontrolledAccordion";
-import {UncontrolledRating} from "./components/UncontrolledRating/UncontrolledRating";
-// import Students from "./components/Students/Students";
-// import Cars from "./components/Cars/Cars";
-// import Button from "./components/Button/Button";
+import {UncontrolledSwitcher} from './components/UncontrolledSwitcher/UncontrolledSwitcher';
+import UncontrolledAccordion from './components/UncontrolledAccordion/UncontrolledAccordion';
+import {Rating, RatingValueType} from './components/ControlledRating/Rating';
+import {UncontrolledRating} from './components/UncontrolledRating/UncontrolledRating';
+import Accordion from './components/ControlledAccordion/Accordion';
+import {ControlledSwitcher} from './components/ControlledSwitcher/ControlledSwitcher';
 
-//
+export type FilterValueType = 'all' | 'Dollars' | 'RUBLS'
+// type PageTitlePropsType = {
+//     title: string
+// }
+
 // let topCarsArray = [
 //     {company: "a", model: "10"},
 //     {company: "b", model: "20"},
 //     {company: "c", model: "30"}
 // ]
-//
 
+// function PageTitle(props: PageTitlePropsType) {
+//     return (
+//         <h1>
+//             {props.title}
+//         </h1>
+//     )
+// }
 
-export type FilterValueType = "all" | "Dollars" | 'RUBLS'
+// function hello() {
+//     debugger
+//     alert("hello")
+// }
 
+// hello()
 
 function App() {
-    console.log("App is rendering")
+    console.log('App is rendering')
     // IMPORTANT! ----- each time any state is changed >> App is rerendered
-
 
     //
     // const button1Foo = () => {
@@ -42,8 +54,6 @@ function App() {
     // const onClickHandlerMinus = () => {
     //  setA(0)
     // };
-
-
     // const [money, setMoney] = React.useState([
     //     {banknotes: 'Dollars', value: 100, number: ' a1234567890'},
     //     {banknotes: 'Dollars', value: 50, number: ' z1234567890'},
@@ -62,7 +72,6 @@ function App() {
     // const onClickFilterHandler = (currency: FilterValueType) => {
     //     setFilterValue(currency)
     // };
-
     // if (filterValue === 'Dollars') {
     //     currentMoney = currentMoney.filter((initialElement, index) => initialElement.banknotes === "Dollars")
     // }
@@ -71,17 +80,36 @@ function App() {
     //     currentMoney = currentMoney.filter((initialElement, index) => initialElement.banknotes === "RUBLS")
     //
     // }
-
     // if (filterValue !== "all") {
     //     currentMoney = currentMoney.filter((initialElement) => initialElement.banknotes === filterValue)
     // }
 
+    let [ratingValue, setRatingValue] = useState<RatingValueType>(0)
+    let [accordionIsCollapsed, setAccordionIsCollapsedState] = useState<boolean>(false)
+    const [switcherTurned, setSwitcherTurned] = useState(false)
+
     return (
         <div>
+            <Rating
+                value={ratingValue}
+                onClick={setRatingValue}
+            />
+            <UncontrolledRating/>
 
-            <Switcher/>
-            <Switcher/>
-            {/*<Switcher isTurned={false}/>*/}
+            <Accordion
+                titleValue={'Menu Controlled'}
+                accordionCollapsed= {accordionIsCollapsed}
+                onClick = {setAccordionIsCollapsedState}
+            />
+            <UncontrolledAccordion
+                titleValue={'Menu Uncontrolled'}
+            />
+
+            <ControlledSwitcher
+                switcherTurned={switcherTurned}
+                setSwitcherTurned={setSwitcherTurned}
+            />
+            <UncontrolledSwitcher/>
 
             {/*<UseState*/}
             {/*currentMoney={currentMoney}*/}
@@ -91,26 +119,8 @@ function App() {
             {/*<h1>{a}</h1>*/}
             {/*<button onClick={onClickHandlerPlus}>+1</button>*/}
             {/*<button onClick={onClickHandlerMinus}>0</button>*/}
-
-
             {/*<Button name={"Btn1"} callBack={button1Foo}/>*/}
             {/*<Button name={"Btn2"} callBack={button2Foo}/>*/}
-
-
-            {/*Article 1*/}
-            <UncontrolledAccordion
-                titleValue={"Menu"}
-            />
-            <UncontrolledAccordion
-                titleValue={"Users"}
-            />
-            {/*Article 2*/}
-            {/*<UncontrolledRating value={0}/>*/}
-            {/*<UncontrolledRating value={1}/>*/}
-            {/*<UncontrolledRating value={2}/>*/}
-            <UncontrolledRating/>
-            {/*<UncontrolledRating value={4}/>*/}
-            {/*<UncontrolledRating value={5}/>*/}
 
             {/*<Students*/}
             {/*infoStudents ={[*/}
@@ -121,31 +131,8 @@ function App() {
             {/*]}/>*/}
 
             {/*<Cars carsInfo = {topCarsArray}/>*/}
-
-
         </div>
     );
 }
-
-// type PageTitlePropsType = {
-//     title: string
-// }
-//
-// function PageTitle(props: PageTitlePropsType) {
-//     return (
-//         <h1>
-//             {props.title}
-//         </h1>
-//     )
-// }
-//
-//
-// function hello() {
-//     debugger
-//     alert("hello")
-// }
-
-// hello()
-
 
 export default App;
