@@ -2,7 +2,7 @@ import React, {useState} from 'react';
 import './UncontrolledSwitcher.css'
 
 type UncontrolledSwitcherType = {
-    // isTurned: boolean
+    onChange: (isTurned: boolean)=>void
 }
 
 export const UncontrolledSwitcher: React.FC<UncontrolledSwitcherType> = (props) => {
@@ -41,6 +41,7 @@ export const UncontrolledSwitcher: React.FC<UncontrolledSwitcherType> = (props) 
 
     const onClickHandler = () => {
      setIsTurned(!isTurned)
+        props.onChange(!isTurned)
     };
 
     return (

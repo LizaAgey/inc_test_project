@@ -1,9 +1,9 @@
-import React, {useState} from 'react';
+import React from 'react';
 
 type AccordionPropsType = {
     titleValue: string
     accordionCollapsed: boolean
-    onClick: (accordionCollapsed: boolean)=>void
+    onClick: ()=>void
 }
 
 type AccordionTitlePropsType = {
@@ -16,7 +16,7 @@ function Accordion(props: AccordionPropsType) {
     console.log("Accordion is rendering")
     return <div>
         <AccordionTitle title={props.titleValue}
-                        onClick={()=>props.onClick(!props.accordionCollapsed)}
+                        onClick={props.onClick}
                         />
         {!props.accordionCollapsed && <AccordionBody/>}
     </div>
@@ -25,7 +25,7 @@ function Accordion(props: AccordionPropsType) {
 function AccordionTitle(props: AccordionTitlePropsType) {
     console.log("AccordionTitle is rendering")
     return (
-        <h3 onClick={()=>props.onClick()}>{props.title}</h3>
+        <h3 onClick={props.onClick}>{props.title}</h3>
     )
 }
 

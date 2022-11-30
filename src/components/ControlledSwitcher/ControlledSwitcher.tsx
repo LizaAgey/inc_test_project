@@ -2,7 +2,7 @@ import React from 'react';
 import './ControlledSwitcher.css'
 
 type ControlledSwitcherType = {
-    setSwitcherTurned: (switcherTurned: boolean)=>void
+    setSwitcherTurned: (switcherTurned:boolean)=>void
     switcherTurned: boolean
 }
 
@@ -40,8 +40,8 @@ export const ControlledSwitcher: React.FC<ControlledSwitcherType> = (props) => {
 
     return (
         <>
-            <div style={onStyle} onClick={()=>props.setSwitcherTurned(!props.switcherTurned)}>On</div>
-            <div style={offStyle} onClick={()=>props.setSwitcherTurned(!props.switcherTurned)}>Off</div>
+            <div style={onStyle} onClick={()=>props.setSwitcherTurned(true)}>On</div>
+            <div style={offStyle} onClick={()=>props.setSwitcherTurned(false)}>Off</div>
             <div style={lampStyle}></div>
         </>
     )

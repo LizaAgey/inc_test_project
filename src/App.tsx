@@ -85,7 +85,7 @@ function App() {
     // }
 
     let [ratingValue, setRatingValue] = useState<RatingValueType>(0)
-    let [accordionIsCollapsed, setAccordionIsCollapsedState] = useState<boolean>(false)
+    let [accordionCollapsed, setAccordionCollapsedState] = useState<boolean>(false)
     const [switcherTurned, setSwitcherTurned] = useState(false)
 
     return (
@@ -98,18 +98,21 @@ function App() {
 
             <Accordion
                 titleValue={'Menu Controlled'}
-                accordionCollapsed= {accordionIsCollapsed}
-                onClick = {setAccordionIsCollapsedState}
+                accordionCollapsed= {accordionCollapsed}
+                onClick = {()=>setAccordionCollapsedState(!accordionCollapsed)}
             />
             <UncontrolledAccordion
                 titleValue={'Menu Uncontrolled'}
             />
 
-            <ControlledSwitcher
-                switcherTurned={switcherTurned}
-                setSwitcherTurned={setSwitcherTurned}
+            {/*<ControlledSwitcher*/}
+            {/*    switcherTurned={switcherTurned}*/}
+            {/*    setSwitcherTurned={setSwitcherTurned}*/}
+            {/*/>*/}
+            <UncontrolledSwitcher
+            onChange = {setSwitcherTurned}
             />
-            <UncontrolledSwitcher/>
+            {switcherTurned.toString()}
 
             {/*<UseState*/}
             {/*currentMoney={currentMoney}*/}
