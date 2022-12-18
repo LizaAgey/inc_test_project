@@ -1,5 +1,5 @@
 import React, {useState} from 'react'
-import {ControlledSwitcher} from '../components/ControlledSwitcher/ControlledSwitcher';
+import {ControlledSwitcher} from './ControlledSwitcher';
 import {action} from '@storybook/addon-actions';
 
 export default {

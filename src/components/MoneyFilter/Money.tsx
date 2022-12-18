@@ -1,5 +1,5 @@
 import React from 'react';
-import {FilterValueType} from "../App";
+import {FilterValueType} from "../../App";
 
 type MoneyRecordType = {
     banknotes: string,

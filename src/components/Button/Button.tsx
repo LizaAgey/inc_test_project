@@ -1,6 +1,6 @@
 import React from 'react';
 
-type ButtonType = {
+export type ButtonType = {
     name: string,
     callBack: () => void
 }

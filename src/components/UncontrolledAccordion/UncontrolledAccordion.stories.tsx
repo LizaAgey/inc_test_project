@@ -1,5 +1,5 @@
 import React from 'react'
-import UncontrolledAccordion from '../components/UncontrolledAccordion/UncontrolledAccordion';
+import UncontrolledAccordion from './UncontrolledAccordion';
 
 export default {
     title: 'Accordion stories',

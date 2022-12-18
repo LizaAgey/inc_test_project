@@ -1,5 +1,5 @@
 import React from 'react'
-import Cars from '../components/Cars/Cars';
+import Cars from './Cars';
 
 export default {
     title: "Cars stories",

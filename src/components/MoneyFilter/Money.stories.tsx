@@ -1,6 +1,6 @@
 import React, {useState} from 'react'
-import Money from '../components/Money';
-import {FilterValueType} from '../App';
+import Money from './Money';
+import {FilterValueType} from '../../App';
 
 export default {
     title: 'Money stories',

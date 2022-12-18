@@ -1,5 +1,5 @@
 import React from 'react'
-import Students from '../components/Students/Students';
+import Students from './Students';
 
 export default {
     title: "Students stories",

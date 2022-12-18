@@ -1,14 +1,19 @@
 import React from 'react';
 
-type AccordionPropsType = {
+export type AccordionPropsType = {
     titleValue: string
+    /**
+     * Received mode for accordion
+     */
     accordionCollapsed: boolean
     onClick: ()=>void
+    color?:string
 }
 
 type AccordionTitlePropsType = {
     title: string,
     onClick: ()=>void
+    color?: string
 }
 
 export function Accordion(props: AccordionPropsType) {
@@ -17,6 +22,7 @@ export function Accordion(props: AccordionPropsType) {
     return <div>
         <AccordionTitle title={props.titleValue}
                         onClick={props.onClick}
+                        color={props.color ? props.color : "black"}
                         />
         {!props.accordionCollapsed && <AccordionBody/>}
     </div>
@@ -25,7 +31,10 @@ export function Accordion(props: AccordionPropsType) {
 function AccordionTitle(props: AccordionTitlePropsType) {
     console.log("AccordionTitle is rendering")
     return (
-        <h3 onClick={(e)=>props.onClick()}>{props.title}</h3>
+        <h3
+            onClick={(e)=>props.onClick()}
+        style={{color:props.color}}
+        >{props.title}</h3>
     )
 }
 

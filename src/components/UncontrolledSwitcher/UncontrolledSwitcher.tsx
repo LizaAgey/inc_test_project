@@ -3,11 +3,12 @@ import './UncontrolledSwitcher.css'
 
 type UncontrolledSwitcherType = {
     onChange: (isTurned: boolean) => void
+    defaultValue?:boolean
 }
 
 export const UncontrolledSwitcher: React.FC<UncontrolledSwitcherType> = (props) => {
 
-    const [isTurned, setIsTurned] = useState(false)
+    const [isTurned, setIsTurned] = useState(props.defaultValue ? props.defaultValue : false)
 
     const onStyle = {
         width: '30px',
