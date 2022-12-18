@@ -2,7 +2,7 @@ import React, {useState} from 'react';
 import './UncontrolledSwitcher.css'
 
 type UncontrolledSwitcherType = {
-    onChange: (isTurned: boolean)=>void
+    onChange: (isTurned: boolean) => void
 }
 
 export const UncontrolledSwitcher: React.FC<UncontrolledSwitcherType> = (props) => {
@@ -14,20 +14,20 @@ export const UncontrolledSwitcher: React.FC<UncontrolledSwitcherType> = (props) 
         height: '20px',
         border: '1px solid black',
         display: 'inline-block',
-        marginLeft: "5px",
-        padding: "2px",
-        backgroundColor: isTurned ? "green" : "white",
-        cursor: "pointer"
+        marginLeft: '5px',
+        padding: '2px',
+        backgroundColor: isTurned ? 'green' : 'white',
+        cursor: 'pointer'
     }
     const offStyle = {
         width: '30px',
         height: '20px',
         border: '1px solid black',
         display: 'inline-block',
-        marginLeft: "2px",
-        padding: "2px",
-        backgroundColor: !isTurned ? "red" : "white",
-        cursor: "pointer"
+        marginLeft: '2px',
+        padding: '2px',
+        backgroundColor: !isTurned ? 'red' : 'white',
+        cursor: 'pointer'
     }
     const lampStyle = {
         width: '10px',
@@ -35,12 +35,12 @@ export const UncontrolledSwitcher: React.FC<UncontrolledSwitcherType> = (props) 
         borderRadius: '100%',
         border: '1px solid black',
         display: 'inline-block',
-        marginLeft: "5px",
-        backgroundColor: isTurned ? "green" : "red"
+        marginLeft: '5px',
+        backgroundColor: isTurned ? 'green' : 'red'
     }
 
     const onClickHandler = () => {
-     setIsTurned(!isTurned)
+        setIsTurned(!isTurned)
         props.onChange(!isTurned)
     };
 

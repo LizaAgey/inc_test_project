@@ -16,7 +16,7 @@ const Students: React.FC<StudentsComponentType> = (props) => {
         <ul>
             {props.infoStudents.map(
                 (objectFromInfoStudents, index) => {
-                    return <li key={objectFromInfoStudents.id}>{objectFromInfoStudents.age}</li>
+                    return <li key={objectFromInfoStudents.id}>Age: {objectFromInfoStudents.age}, Name: {objectFromInfoStudents.name}</li>
                 }
             )}
         </ul>

@@ -4,7 +4,7 @@ import {UncontrolledSwitcher} from './components/UncontrolledSwitcher/Uncontroll
 import UncontrolledAccordion from './components/UncontrolledAccordion/UncontrolledAccordion';
 import {Rating, RatingValueType} from './components/ControlledRating/Rating';
 import {UncontrolledRating} from './components/UncontrolledRating/UncontrolledRating';
-import Accordion from './components/ControlledAccordion/Accordion';
+import {Accordion} from './components/ControlledAccordion/Accordion';
 import {ControlledSwitcher} from './components/ControlledSwitcher/ControlledSwitcher';
 
 export type FilterValueType = 'all' | 'Dollars' | 'RUBLS'
@@ -114,7 +114,7 @@ function App() {
             />
             {switcherTurned.toString()}
 
-            {/*<UseState*/}
+            {/*<Money*/}
             {/*currentMoney={currentMoney}*/}
             {/*onClickFilterHandler={onClickFilterHandler}*/}
             {/*/>*/}

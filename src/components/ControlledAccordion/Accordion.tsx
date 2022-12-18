@@ -11,7 +11,7 @@ type AccordionTitlePropsType = {
     onClick: ()=>void
 }
 
-function Accordion(props: AccordionPropsType) {
+export function Accordion(props: AccordionPropsType) {
 
     console.log("Accordion is rendering")
     return <div>
@@ -25,7 +25,7 @@ function Accordion(props: AccordionPropsType) {
 function AccordionTitle(props: AccordionTitlePropsType) {
     console.log("AccordionTitle is rendering")
     return (
-        <h3 onClick={props.onClick}>{props.title}</h3>
+        <h3 onClick={(e)=>props.onClick()}>{props.title}</h3>
     )
 }
 
@@ -40,4 +40,3 @@ function AccordionBody() {
     )
 }
 
-export default Accordion

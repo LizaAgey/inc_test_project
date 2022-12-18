@@ -4,15 +4,14 @@ import {FilterValueType} from "../App";
 type MoneyRecordType = {
     banknotes: string,
     value: number,
-    number: string
 }
 
 
-type UseStateComponentType = {
+type MoneyType = {
     currentMoney: Array<MoneyRecordType>,
     onClickFilterHandler: (FilterValue: FilterValueType) => void
 }
-const UseState: React.FC<UseStateComponentType> = (props) => {
+const Money: React.FC<MoneyType> = (props) => {
     return (
         <div>
             <ul>
@@ -20,7 +19,6 @@ const UseState: React.FC<UseStateComponentType> = (props) => {
                     return (
                         <li key={index}>
                             <span>{initialElement.banknotes} -</span>
-                            <span>{initialElement.number} -</span>
                             <span>{initialElement.value} -</span>
                         </li>)
 
@@ -35,4 +33,4 @@ const UseState: React.FC<UseStateComponentType> = (props) => {
 };
 
 
-export default UseState;
+export default Money;

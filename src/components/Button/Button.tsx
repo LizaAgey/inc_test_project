@@ -5,7 +5,7 @@ type ButtonType = {
     callBack: () => void
 }
 
-const Button: React.FC<ButtonType> = (props) => {
+export const Button: React.FC<ButtonType> = (props) => {
 
     // const myFirstSubscriber = (event: MouseEvent<HTMLButtonElement>) => {
     //     alert("user1")
@@ -44,5 +44,3 @@ const Button: React.FC<ButtonType> = (props) => {
     {/*<button onClick={()=>foo2(100300)}>2</button>*/
     }
 }
-
-export default Button;
