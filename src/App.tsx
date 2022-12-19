@@ -66,7 +66,7 @@ function App() {
             <Accordion
                 titleValue={'Menu Controlled'}
                 accordionCollapsed= {accordionCollapsed}
-                onClick = {()=>setAccordionCollapsedState(!accordionCollapsed)}
+                onTitleClick= {()=>setAccordionCollapsedState(!accordionCollapsed)}
             />
             <UncontrolledAccordion
                 titleValue={'Menu Uncontrolled'}
