@@ -8,6 +8,7 @@ import React, {
 } from 'react'
 
 import {Story} from '@storybook/react';
+import {action} from '@storybook/addon-actions';
 
 export default {
     title: 'input'
@@ -15,7 +16,6 @@ export default {
 const Template: Story<DetailedHTMLProps<InputHTMLAttributes<HTMLInputElement>, HTMLInputElement>> = (args) =>
     <input {...args}/>
 
-export const ControlledInput = Template.bind({})
 export const UncontrolledInput = Template.bind({})
 export const TrackedUncontrolledInput = (args: any) => {
     const [value, setValue] = useState('')
@@ -30,7 +30,7 @@ export const TrackedUncontrolledInput = (args: any) => {
 export const GetValueOfUncontrolledInputByButtonPress = (args: any) => {
     const [value, setValue] = useState('')
     let inputValue: string
-    const inputCurrentValueHandler = (event:ChangeEvent<HTMLInputElement>) => {
+    const inputCurrentValueHandler = (event: ChangeEvent<HTMLInputElement>) => {
         inputValue = event.currentTarget.value
     };
     return <>
@@ -61,10 +61,32 @@ export const GetValueOfUncontrolledInputByButtonPressViaRef = (args: any) => {
         Actual value is "{value}"
     </>
 };
-
-ControlledInput.args = {
-    value: 'hei'
-}
 TrackedUncontrolledInput.args = {
     type: 'text',
+}
+
+export const ControlledCheckbox = (args: any) => {
+    const [parentValue, setParentValue] = useState(false)
+    const onChange = (e: ChangeEvent<HTMLInputElement>) => {
+        setParentValue(e.currentTarget.checked)
+    };
+    return <input type="checkbox" checked={parentValue} onChange={onChange}/>
+}
+export const ControlledInput = (args: any) => {
+    const [parentValue, setParentValue] = useState('')
+    const onChange = (e: ChangeEvent<HTMLInputElement>) => {
+        setParentValue(e.currentTarget.value)
+    };
+    return <input type="text" value={parentValue} onChange={onChange}/>
+}
+export const ControlledSelect = (args: any) => {
+    const [parentValue, setParentValue] = useState<string | undefined>("2")
+    const onChange = (e: ChangeEvent<HTMLSelectElement>) => {
+        setParentValue(e.currentTarget.value)
+    };
+    return <select value={parentValue} onChange={onChange}>
+        <option value="1">none</option>
+        <option value="2">Hey</option>
+        <option value="3">Lalaley</option>
+    </select>
 }
