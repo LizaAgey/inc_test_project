@@ -1,7 +1,7 @@
 import React from 'react';
 //--------------------------------------------ACCORDION------------
 
-export type ItemsType = {
+ type ItemsType = {
     id: number
     value: any
 }
