@@ -1,5 +1,5 @@
 import React, {useReducer} from 'react';
-import {reducer} from './Reducer';
+import {CHANGE_COLLAPSED_MODE, reducer} from './Reducer';
 
 
 type UncontrolledAccordion_Reducer_PropsType = {
@@ -13,14 +13,14 @@ type AccordionTitlePropsType = {
 function UncontrolledAccordion_Reducer(props: UncontrolledAccordion_Reducer_PropsType) {
     console.log('UncontrolledAccordion is rendering')
     // const [isCollapsed, setIsCollapsed] = useState(true)
-    const [isCollapsed, dispatch] = useReducer(reducer, false)
+    const [state, dispatch] = useReducer(reducer, {isCollapsed:false})
 
     return <div>
         <AccordionTitle title={props.titleValue}
-                        onClick={() => dispatch({type: 'CHANGE_COLLAPSED_MODE'})}
+                        onClick={() => dispatch({type: CHANGE_COLLAPSED_MODE})}
         />
 
-        {!isCollapsed && <AccordionBody/>}
+        {!state.isCollapsed && <AccordionBody/>}
     </div>
 }
 
