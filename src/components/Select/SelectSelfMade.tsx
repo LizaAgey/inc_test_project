@@ -18,7 +18,8 @@ const SelectSelfMade: React.FC<SelectType> = (props) => {
     const [isExpanded, setExpanded] = useState(false)
     const [hoveredElementValue, setHoveredElementValue] = useState(props.value)
 
-    useEffect(() => {setHoveredElementValue(currentValue)
+    useEffect(() => {
+        setHoveredElementValue(currentValue)
     }, [currentValue])
 
     const hoveredItem = props.items.find(item => item.value === hoveredElementValue)
@@ -35,14 +36,13 @@ const SelectSelfMade: React.FC<SelectType> = (props) => {
         setExpanded(false)
     };
     const onKeyUpHandler = (event: KeyboardEvent<HTMLDivElement>) => {
-        console.log(event.key)
+
         for (let i = 0; i < props.items.length; i++) {
-            if(event.key === "ArrowDown" || event.key === "ArrowUp") {
+            if (event.key === 'ArrowDown' || event.key === 'ArrowUp') {
 
                 if (props.items[i].value === hoveredElementValue) {
 
-                    const nextHoveredElement = event.key === "ArrowDown" ? props.items[i + 1] : props.items[i - 1]
-                    console.log(nextHoveredElement)
+                    const nextHoveredElement = event.key === 'ArrowDown' ? props.items[i + 1] : props.items[i - 1]
 
                     if (nextHoveredElement) {
                         setCurrentValue(nextHoveredElement.value)
@@ -50,10 +50,12 @@ const SelectSelfMade: React.FC<SelectType> = (props) => {
                     }
                 }
 
-                setCurrentValue (props.items[0].value)
+                if (!currentValue) {
+                    setCurrentValue(props.items[0].value)
+                }
             }
 
-            if(event.key === "Escape" || event.key === "Enter") {
+            if (event.key === 'Escape' || event.key === 'Enter') {
                 setExpanded(false)
             }
 
