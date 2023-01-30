@@ -46,3 +46,7 @@
     border: 2px solid grey;
     border-radius: 2px;
 }
+
+.selectedItem {
+    background-color: lightgrey;
+}
