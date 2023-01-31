@@ -2,15 +2,18 @@ import React, {useEffect, useState} from 'react';
 import styles from './SelectSelfMade.module.css'
 import {KeyboardEvent} from 'react';
 
-type ItemsType = {
+export type ItemsType = {
     id: number
     value: string
+    country?: string
+    isCapital?: boolean
 }
 
 export type SelectType = {
     value?: string
     onChange?: (value: string) => void
     items: Array<ItemsType>
+    id?: string
 }
 
 const SelectSelfMade: React.FC<SelectType> = (props) => {
@@ -61,7 +64,7 @@ const SelectSelfMade: React.FC<SelectType> = (props) => {
 
         }
     };
-
+    console.log("select from", props.id)
     return (
         <div className={styles.selectWrapper} tabIndex={0} onKeyUp={onKeyUpHandler}>
             <div className={styles.defaultSelect} onClick={collapseHandler}>
