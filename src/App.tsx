@@ -63,11 +63,11 @@ function App() {
             />
             {/*<UncontrolledRating/>*/}
 
-            <Accordion
-                titleValue={'Menu Controlled'}
-                accordionCollapsed= {accordionCollapsed}
-                onTitleClick= {()=>setAccordionCollapsedState(!accordionCollapsed)}
-            />
+            {/*<Accordion*/}
+            {/*    titleValue={'Menu Controlled'}*/}
+            {/*    accordionCollapsed= {accordionCollapsed}*/}
+            {/*    onTitleClick= {()=>setAccordionCollapsedState(!accordionCollapsed)}*/}
+            {/*/>*/}
             <UncontrolledAccordion
                 titleValue={'Menu Uncontrolled'}
             />
